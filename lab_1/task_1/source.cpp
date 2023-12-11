@@ -5,6 +5,7 @@ using namespace std;
 unsigned short height; // Глобальная переменная
 string salary_string;
 
+setlocale(LC_ALL, "Russian");
 unsigned short ReadPersonAge(){ // Осуществляет ввод с клавиатуры возраста человека
     cout << "Введите возраст" << endl;
     unsigned short PersonAge;
@@ -45,6 +46,8 @@ void ReadPersonData(string& name, unsigned short& age, unsigned short& hei, unsi
     hei = height;
     ReadPersonWeight(weight);
 }
+
+#ifndef DO_NOT_DEFINE_MAIN
 int main(){
     unsigned short age, height = 0, weight = 0;
     string name;
@@ -61,3 +64,4 @@ int main(){
     WritePersonData(name, height_string, weight_string, &age);
     return 0;
 }
+#endif
